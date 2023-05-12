@@ -6,7 +6,7 @@
       <Nuxt/>
     </main>
 
-    <TheFooter class="footer" padding-t-b="2%" />
+    <!-- <TheFooter class="footer" padding-t-b="2%" /> -->
   </div>
 </template>
 
