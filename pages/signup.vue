@@ -1,0 +1,39 @@
+<template>
+  <AuthForm
+    heading="Регистрация"
+    :inputs="inputs"
+    :additional="additional"
+    button-text="Зарегистрироваться"
+  >
+    <template #agreement>
+      Регистрируясь, вы соглашаетесь с
+      <NuxtLink to="#" class="form-page__agreement-link">
+        правилами пользовательского соглашения
+      </NuxtLink>
+    </template>
+  </AuthForm>
+</template>
+
+<script>
+export default {
+  name: 'SignupPage',
+  layout: 'auth',
+  data () {
+    return {
+      inputs: [
+        { type: 'text', placeholder: 'Введите никнейм', name: 'username' },
+        { type: 'email', placeholder: 'Введите email', name: 'email' },
+        { type: 'password', placeholder: 'Введите пароль', name: 'password' },
+      ],
+      additional: {
+        href: '/login',
+        text: 'Уже есть аккаунт? Войти'
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>

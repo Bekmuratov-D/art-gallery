@@ -1,0 +1,54 @@
+@use 'base/reset';
+@use 'base/variables';
+@use 'base/typography';
+
+@use 'components/btn';
+@use 'components/heading';
+
+.page,
+.page__body,
+#__nuxt,
+#__layout,
+.layout {
+  min-height: 100%;
+}
+
+.page {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-top: 12%;
+  text-align: center;
+
+  &__heading {
+    margin-bottom: 4.75rem;
+  }
+
+  &__description {
+    margin-bottom: 3.25rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
