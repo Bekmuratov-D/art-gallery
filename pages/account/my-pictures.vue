@@ -15,27 +15,30 @@
       </ul>
     </div>
 
-    <!-- <component :is="store.favouriteCategory">
-    </component> -->
+    <AccountPictures :data="images"/>
+
+    <!-- Нужно создать новый компонет, сверстать на подобии AccountPictures но по мокету (они отличаются) -->
+
   </div>
 </template>
 
 <script>
-// import { useFavouritesStore2 } from '~/stores/favourites'
 
 export default {
   layout: 'account',
   data () {
     return {
-      // links: [
-      //   { key: 'AccountSubscriptions', text: 'Подписки' },
-      //   { key: 'AccountSubscribers', text: 'Подписчики' },
-      // ],
-      // store: null,
+      images: [
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting.jpg') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting-1.png') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting-1.png') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/blog.png') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting.jpg') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/firstscreenbg.jpg') },
+      ]
     }
   },
   created () {
-    // this.store = useFavouritesStore2()
   }
 }
 </script>
