@@ -1,18 +1,107 @@
 <template>
 <div class="index">
-    profile
+  <h4 class="heading">Карточка художника</h4>
+  <div class="card">
+    <img class="card__img" src="@/assets/images/profile.jpg" alt="card__img">
+    <div class="card__info">
+      <p class="card__name">{{ card.name }}</p>
+      <p class="card__text">{{ card.text }}</p>
+      <div class="cart__btn-list">
+        <button 
+          v-for="(btn, i) in card.btnList"
+          :key="i"
+          class="card__btn"
+        >
+          {{ btn.text }}
+        </button>
+      </div>    
+    </div>
+  </div>
+
+  <AccountNav class="links" :links="links" :active-key="store.favouriteCategory" @change="store.favouriteCategory = $event" />
+  
+  <component :is="store.favouriteCategory" :data="images">
+  </component>
 </div>
 </template>
 
 <script>
+import { useFavouritesStore3 } from '~/stores/favourites'
 
 export default {
-layout: 'profile',
+  layout: 'profile',
+  data () {
+    return {
+      links: [
+        { key: 'AccountPictures', text: 'Картины' },
+        { key: 'AccountArticles', text: 'Посты' },
+      ],
+      card: {
+        name: 'Куприянова Анастасия',
+        text: 'Не следует, однако, забывать, что глубокий уровень погружения однозначно фиксирует необходимость системы массового участия. Следует отметить, что высокое качество позиционных исследований создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса новых принципов формирования',
+        btnList: [
+            {to: '#', text: 'сюрреализм'},
+            {to: '#', text: 'каррикатура'},
+            {to: '#', text: 'черно-белое'},
+            {to: '#', text: 'портрет'},
+        ]
+      },
+      images: [
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting.jpg') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting-1.png') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting-1.png') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/blog.png') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting.jpg') },
+        { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/firstscreenbg.jpg') },
+      ]
+    }
+  },
+  created () {
+    this.store = useFavouritesStore3()
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .index {
+    max-width: 1270px;
+.heading{
+    font-size: 40px;
+}
+.card{
+    display: flex;
+    &__img{
+      margin-right: 145px;
+    }
 
+    &__name{
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 41px; 
+      margin-bottom: 60px;
+      color: #F8F3E6;
+    }
+
+    &__text{
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 130%;
+      color: #F8F3E6;   
+      max-width: 545px;
+      margin-bottom: 80px;
+    }
+
+    &__btn-list{
+        display: flex;
+    }
+}
+.links{
+    max-width: 600px;
+    margin-top: 230px;
+}
 }
 </style>

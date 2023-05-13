@@ -13,3 +13,10 @@ export const useFavouritesStore2 = defineStore({
     favouriteCategory: 'AccountSubscriptions'
   })
 })
+
+export const useFavouritesStore3 = defineStore({
+  id: 'favourites3',
+  state: () => ({
+    favouriteCategory: 'AccountPictures'
+  })
+})

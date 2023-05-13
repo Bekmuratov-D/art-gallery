@@ -22,7 +22,7 @@ export default {
         { href: '#', text: 'Новости' },
         { href: '#', text: 'Блог' },
         { href: '#', text: 'Контакты' },
-        { href: '#', text: 'Профиль' },
+        { href: '#', text: 'Аккаунт' },
       ]
     }
   }
