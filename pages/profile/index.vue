@@ -6,21 +6,15 @@
     <div class="card__info">
       <p class="card__name">{{ card.name }}</p>
       <p class="card__text">{{ card.text }}</p>
-      <div class="cart__btn-list">
-        <button 
-          v-for="(btn, i) in card.btnList"
-          :key="i"
-          class="card__btn"
-        >
-          {{ btn.text }}
-        </button>
-      </div>    
+      
+      <!-- <MulticolBtn/> -->
+
     </div>
   </div>
 
   <AccountNav class="links" :links="links" :active-key="store.favouriteCategory" @change="store.favouriteCategory = $event" />
   
-  <component :is="store.favouriteCategory" :data="images">
+  <component :is="store.favouriteCategory" :data="images" :articles="articles" :height="height">
   </component>
 </div>
 </template>
@@ -29,9 +23,11 @@
 import { useFavouritesStore3 } from '~/stores/favourites'
 
 export default {
+  components: { },
   layout: 'profile',
   data () {
     return {
+      height: "323px",
       links: [
         { key: 'AccountPictures', text: 'Картины' },
         { key: 'AccountArticles', text: 'Посты' },
@@ -53,6 +49,14 @@ export default {
         { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/blog.png') },
         { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting.jpg') },
         { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/firstscreenbg.jpg') },
+      ],
+      articles: [
+        { id: 0, title: 'Утро в сосновом бору', like: false, description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article2.jpg') },
+        { id: 0, title: 'Подопечный', like: false, description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article2.jpg') },
+        { id: 0, title: 'Сказания о Вещем Олеге', like: true, description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article2.jpg') },
+        { id: 0, title: 'Название', like: false, description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article2.jpg') },
+        { id: 0, title: 'Название', like: false, description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article2.jpg') },
+        { id: 0, title: 'Название', like: false,  description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article2.jpg') },
       ]
     }
   },
