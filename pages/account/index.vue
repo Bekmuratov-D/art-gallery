@@ -2,7 +2,7 @@
   <div class="index">
     <AccountNav :links="links" :active-key="store.favouriteCategory" @change="store.favouriteCategory = $event" />
 
-    <component :is="store.favouriteCategory" :data="images" :articles="articles" :height="height">
+    <component :is="store.favouriteCategory" :data="images" :articles="articles" :height="height" :authors="authors">
     </component>
   </div>
 </template>
@@ -39,6 +39,13 @@ export default {
         { id: 0, title: 'Название', like: false,  description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article-img.jpg') },
       ],
       height: '237px',
+      authors: [
+        {name: 'Кондратьева Алена', directions: [{id: 1, name: 'каррикатура'}, {id: 1, name: 'графика'}, {id: 1, name: 'преподаватель'}, {id: 1, name: 'сюрреализм'}, {id: 1, name: 'ню'}], favourites: true, image: require('@/assets/images/avatar1.jpg')},
+        {name: 'Василий', directions: [{id: 1, name: 'преподаватель'}, {id: 1, name: 'портрет'}, {id: 1, name: 'академическое письмо'} ], favourites: true, image: require('@/assets/images/avatar2.jpg')},
+        {name: 'ice gingerbread', directions: [{id: 1, name: 'студент'}, {id: 1, name: 'CG-art'}], favourites: true, image: require('@/assets/images/avatar4.jpg')},
+        {name: 'ice gingerbread', directions: [{id: 1, name: 'студент'}, {id: 1, name: 'CG-art'}], favourites: true, image: require('@/assets/images/avatar4.jpg')},
+        {name: 'Василий', directions: [{id: 1, name: 'преподаватель'}, {id: 1, name: 'портрет'}, {id: 1, name: 'академическое письмо'} ], favourites: true, image: require('@/assets/images/avatar3.jpg')},
+      ]
     }
   },
   created () {

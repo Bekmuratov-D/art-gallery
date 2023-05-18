@@ -2,16 +2,12 @@
   <div class="index">
     <div class="nav">
       <ul class="nav__list">
-        <li class="nav__item">
           <button
             class="nav__btn btn heading heading--h3"
           >
             Мои картины
           </button>
-          <button>
-           Добавить картину
-          </button>
-        </li>
+          <AccountBtnAdd :btn="btn"/>
       </ul>
     </div>
 
@@ -35,7 +31,8 @@ export default {
         { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/blog.png') },
         { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/painting.jpg') },
         { id: 0, name: 'Example', author: 'author name', image: require('@/assets/images/firstscreenbg.jpg') },
-      ]
+      ],
+      btn: {text: 'Добавить картинку', to: '#'}
     }
   },
   created () {

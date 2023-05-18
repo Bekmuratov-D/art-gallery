@@ -7,7 +7,7 @@
       <p class="card__name">{{ card.name }}</p>
       <p class="card__text">{{ card.text }}</p>
       
-      <!-- <MulticolBtn/> -->
+      <AccountMultiColorBtn :btns="btns"/>
 
     </div>
   </div>
@@ -57,6 +57,12 @@ export default {
         { id: 0, title: 'Название', like: false, description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article2.jpg') },
         { id: 0, title: 'Название', like: false, description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article2.jpg') },
         { id: 0, title: 'Название', like: false,  description: 'Небольшое описание, которое способно уместиться в эти две-три строки, дальше будем ставить многото…', image: require('@/assets/images/article2.jpg') },
+      ],
+      btns: [
+        {color: '#19CBFC', text: 'сюрреализм'},
+        {color: '#FFD64A', text: 'каррикатура'},
+        {color: '#F5A3D3', text: 'черно-белое'},
+        {color: '#19CBFC', text: 'портрет'},
       ]
     }
   },
