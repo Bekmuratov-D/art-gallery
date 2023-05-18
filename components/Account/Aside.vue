@@ -5,7 +5,10 @@
     </NuxtLink>
 
     <div class="aside__main">
-      <p class="aside__info">
+      <p class="aside__info" v-if="$auth.loggedIn">
+        11111
+      </p>
+      <p v-else class="aside__info">
         Username
         <img
           src="@/assets/images/avatar.png"

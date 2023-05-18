@@ -37,6 +37,7 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
   ],
 
   generate: {
@@ -44,7 +45,34 @@ export default {
   },
 
   axios: {
-    baseURL: '/',
+    baseURL: 'http://213.189.201.56:8080/',
+  },
+
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: false,
+      home: '/'
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          global: true,
+          maxAge: 60 * 60 * 24 * 7 // 7 days
+        },
+        user: {
+          property: 'user'
+        },
+        endpoints: {
+          login: { url: '/api/v1/auth/sign-in', method: 'post' },
+          logout: false,
+          user: { url: '/auth/user', method: 'get' }
+        },
+        autoFetchUser: false
+      }
+    }
   },
 
   build: {},
