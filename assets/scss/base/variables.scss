@@ -1,0 +1,14 @@
+:root {
+  --text-primary: #F8F3E6;
+  --bg-primary: #2A2B36;
+  --gradient: radial-gradient(89.55% 184397488.1% at 2.23% -0.05%, #8C93F7 0%, #FFFFFF 20.31%, #56F9D8 37.5%, #19CBFC 58.85%, #FFFFFF 83.85%, #F5A3D3 100%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    // Здесь будут переменные цветов для светлой темы
+    // Например:
+    // --primary: #fff;
+    // --secondary: #000;
+  }
+}
