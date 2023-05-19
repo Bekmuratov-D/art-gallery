@@ -58,8 +58,8 @@ export default {
         { href: '/account/subscriptions', text: 'Подписки' },
         { href: '/account/my-pictures', text: 'Мои картины' },
         { href: '/account/my-articles', text: 'Мои статьи' },
-        { href: '/account/settings', text: 'Настройки' },
-        { href: '#', text: 'Выйти' },
+        { href: '/indev', text: 'Настройки' },
+        { href: '/account', text: 'Выйти' },
       ]
     }
   }

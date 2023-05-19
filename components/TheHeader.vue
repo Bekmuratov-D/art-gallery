@@ -36,10 +36,10 @@ export default {
   data () {
     return {
       links: [
-        { text: 'Галерея', href: 'gallery' },
-        { text: 'Новости', href: 'news' },
-        { text: 'Блог', href: 'blog' },
-        { text: 'Контакты', href: 'contacts' },
+        { text: 'Галерея', href: 'indev' },
+        { text: 'Новости', href: 'indev' },
+        { text: 'Блог', href: 'indev' },
+        { text: 'Контакты', href: 'indev' },
       ]
     }
   },
