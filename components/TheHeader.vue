@@ -39,7 +39,7 @@ export default {
         { text: 'Галерея', href: 'indev' },
         { text: 'Новости', href: 'indev' },
         { text: 'Блог', href: 'indev' },
-        { text: 'Контакты', href: 'indev' },
+        { text: 'Контакты', href: 'contact' },
       ]
     }
   },
