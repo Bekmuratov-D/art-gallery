@@ -73,36 +73,36 @@ export default {
       ]
     }
   },
-  mounted () {
-    this.interval = setInterval(() => {
-      this.nextSlide()
-    }, 22500)
-  },
-  methods: {
-    scrollTo (index) {
-      clearInterval(this.interval)
-      if (index === this.activeSlide) return false
+  // mounted () {
+  //   this.interval = setInterval(() => {
+  //     this.nextSlide()
+  //   }, 22500)
+  // },
+  // methods: {
+  //   scrollTo (index) {
+  //     clearInterval(this.interval)
+  //     if (index === this.activeSlide) return false
 
-      const slideWidth = document.querySelector('.carousel__item').offsetWidth
-      this.translateSum += -(slideWidth * (index - this.activeSlide))
-      this.activeSlide = index
-      this.$refs.list.style.transform = `translateX(${this.translateSum}px)`
-    },
-    nextSlide () {
-      const slideWidth = document.querySelector('.carousel__item').offsetWidth
-      this.activeSlide += 1
+  //     const slideWidth = document.querySelector('.carousel__item').offsetWidth
+  //     this.translateSum += -(slideWidth * (index - this.activeSlide))
+  //     this.activeSlide = index
+  //     this.$refs.list.style.transform = `translateX(${this.translateSum}px)`
+  //   },
+  //   nextSlide () {
+  //     const slideWidth = document.querySelector('.carousel__item').offsetWidth
+  //     this.activeSlide += 1
 
-      if (this.activeSlide >= this.newsList.length) {
-        this.translateSum = 0
-        this.activeSlide = 0
-        this.$refs.list.style.transform = `translateX(${this.translateSum}px)`
-        return false
-      }
+  //     if (this.activeSlide >= this.newsList.length) {
+  //       this.translateSum = 0
+  //       this.activeSlide = 0
+  //       this.$refs.list.style.transform = `translateX(${this.translateSum}px)`
+  //       return false
+  //     }
 
-      this.translateSum -= slideWidth
-      this.$refs.list.style.transform = `translateX(${this.translateSum}px)`
-    }
-  }
+  //     this.translateSum -= slideWidth
+  //     this.$refs.list.style.transform = `translateX(${this.translateSum}px)`
+  //   }
+  // }
 }
 </script>
 

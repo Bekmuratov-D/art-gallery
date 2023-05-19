@@ -66,11 +66,11 @@ export default {
           property: 'user'
         },
         endpoints: {
-          login: { url: '/api/v1/auth/sign-in', method: 'post' },
+          login: { url: '/api/v1/auth/sign-in', method: 'post', propertyName: 'token' },
           logout: false,
-          user: { url: '/auth/user', method: 'get' }
+          user: {url: '/api/v1/auth', method: 'get', propertyName: 'user'}
         },
-        autoFetchUser: false
+        tokenType: 'bearer',
       }
     }
   },
