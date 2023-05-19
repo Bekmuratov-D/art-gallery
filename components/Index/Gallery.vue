@@ -26,7 +26,7 @@
         </li>
       </ul>
 
-      <NuxtLink to="/author/1" class="gallery__button btn btn--primary">
+      <NuxtLink to="/indev" class="gallery__button btn btn--primary">
         Больше работ
       </NuxtLink>
     </div>
