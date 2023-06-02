@@ -1,5 +1,5 @@
 <template>
-<div class="index">
+<div class="index container">
   <h4 class="heading">Карточка художника</h4>
   <div class="card">
     <img class="card__img" src="@/assets/images/profile.jpg" alt="card__img">

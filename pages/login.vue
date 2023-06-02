@@ -57,7 +57,7 @@ export default {
       },
       buttonText: "Войти",
       inputs: [
-        { type: 'string', placeholder: 'Введите email', login: 'string' },
+        { type: 'string', placeholder: 'Введите email', name: 'login' },
         { type: 'password', placeholder: 'Введите пароль', name: 'password' },
       ],
       additional: {
@@ -69,10 +69,7 @@ export default {
   methods: {
     async submit() {
       try {
-        const data = await this.$auth.loginWith('local', { data: this.form })
-
-        console.log(data)
-
+        await this.$auth.loginWith('local', { data: this.form })
         this.$router.push('/')
       }
       catch {

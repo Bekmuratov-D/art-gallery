@@ -21,8 +21,8 @@ export default {
         { href: '#', text: 'Галерея' },
         { href: '#', text: 'Новости' },
         { href: '#', text: 'Блог' },
-        { href: '#', text: 'Контакты' },
-        { href: '#', text: 'Аккаунт' },
+        { href: '/contact', text: 'Контакты' },
+        { href: '/account', text: 'Аккаунт' },
       ]
     }
   }

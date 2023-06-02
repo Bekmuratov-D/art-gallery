@@ -12,6 +12,7 @@ import FavouritesPictures from '@/components/Account/Pictures'
 import { useFavouritesStore } from '~/stores/favourites'
 
 export default {
+  middleware: 'auth',
   components: { FavouritesPictures },
   layout: 'account',
   data () {

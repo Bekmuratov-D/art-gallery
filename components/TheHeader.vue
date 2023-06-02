@@ -15,6 +15,16 @@
             {{ link.text }}
           </NuxtLink>
         </li>
+        <li v-if="$auth.loggedIn" class="header__item">
+          <NuxtLink to="account" class="header__link">
+            Профиль
+          </NuxtLink>
+        </li>
+        <li v-else class="header__item">
+          <NuxtLink to="login" class="header__link">
+            Войти
+          </NuxtLink>
+        </li>
       </ul>
     </nav>
   </header>
@@ -26,11 +36,10 @@ export default {
   data () {
     return {
       links: [
-        { text: 'Галерея', href: 'gallery' },
-        { text: 'Новости', href: 'news' },
-        { text: 'Блог', href: 'blog' },
-        { text: 'Контакты', href: 'contacts' },
-        { text: 'Войти', href: 'login' },
+        { text: 'Галерея', href: 'indev' },
+        { text: 'Новости', href: 'indev' },
+        { text: 'Блог', href: 'indev' },
+        { text: 'Контакты', href: 'contact' },
       ]
     }
   },

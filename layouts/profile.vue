@@ -2,7 +2,7 @@
   <div class="layout">
     <ProfileHeader />
     <main class="main">
-      <Nuxt class="layout__container container" />
+      <Nuxt class="layout__container" />
     </main>
     <TheFooter/>
   </div>

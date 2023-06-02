@@ -5,8 +5,13 @@
     </NuxtLink>
 
     <div class="aside__main">
-      <p class="aside__info" v-if="$auth.loggedIn">
-        11111
+      <p v-if="$auth.loggedIn" class="aside__info" >
+        {{ $auth.user.username }}
+        <img
+          src="@/assets/images/avatar.png"
+          alt="Avatar"
+          class="aside__avatar"
+        >
       </p>
       <p v-else class="aside__info">
         Username
@@ -53,8 +58,8 @@ export default {
         { href: '/account/subscriptions', text: 'Подписки' },
         { href: '/account/my-pictures', text: 'Мои картины' },
         { href: '/account/my-articles', text: 'Мои статьи' },
-        { href: '/account/settings', text: 'Настройки' },
-        { href: '#', text: 'Выйти' },
+        { href: '/indev', text: 'Настройки' },
+        { href: '/account', text: 'Выйти' },
       ]
     }
   }
